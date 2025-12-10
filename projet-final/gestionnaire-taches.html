@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de Tâches - Projet Final</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Gestionnaire de Tâches</h1>
+            <p class="subtitle">Projet Final - Les Fonctions JavaScript</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Formulaire d'ajout -->
+            <section class="form-section">
+                <h2>➕ Ajouter une nouvelle tâche</h2>
+                <form id="form-tache">
+                    <div class="form-group">
+                        <label for="titre">Titre *</label>
+                        <input type="text" id="titre" required placeholder="Ex: Apprendre JavaScript">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" rows="3" placeholder="Détails de la tâche..."></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="priorite">Priorité</label>
+                            <select id="priorite">
+                                <option value="1">⭐ Faible (1)</option>
+                                <option value="2">⭐⭐ Modérée (2)</option>
+                                <option value="3" selected>⭐⭐⭐ Moyenne (3)</option>
+                                <option value="4">⭐⭐⭐⭐ Élevée (4)</option>
+                                <option value="5">⭐⭐⭐⭐⭐ Urgente (5)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date-echeance">Date d'échéance</label>
+                            <input type="date" id="date-echeance">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">➕ Ajouter la tâche</button>
+                </form>
+            </section>
+
+            <!-- Filtres et recherche -->
+            <section class="filters-section">
+                <h2>🔍 Filtres et Recherche</h2>
+                <div class="filters">
+                    <input type="text" id="recherche" placeholder="Rechercher dans les tâches...">
+                    
+                    <select id="filtre-statut">
+                        <option value="tous">Toutes les tâches</option>
+                        <option value="terminees">✓ Terminées</option>
+                        <option value="non-terminees">✗ Non terminées</option>
+                    </select>
+
+                    <select id="filtre-priorite">
+                        <option value="0">Toutes les priorités</option>
+                        <option value="5">⭐⭐⭐⭐⭐ Urgente (5)</option>
+                        <option value="4">⭐⭐⭐⭐ Élevée (4)</option>
+                        <option value="3">⭐⭐⭐ Moyenne (3)</option>
+                        <option value="2">⭐⭐ Modérée (2)</option>
+                        <option value="1">⭐ Faible (1)</option>
+                    </select>
+
+                    <select id="tri">
+                        <option value="date-desc">Date (récent → ancien)</option>
+                        <option value="date-asc">Date (ancien → récent)</option>
+                        <option value="priorite-desc">Priorité (haute → basse)</option>
+                        <option value="priorite-asc">Priorité (basse → haute)</option>
+                        <option value="titre-asc">Titre (A → Z)</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Statistiques -->
+            <section class="stats-section">
+                <h2>📊 Statistiques</h2>
+                <div id="statistiques" class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-total">0</div>
+                        <div class="stat-label">Total</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-terminees">0</div>
+                        <div class="stat-label">Terminées</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-non-terminees">0</div>
+                        <div class="stat-label">Non terminées</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-priorite">0</div>
+                        <div class="stat-label">Priorité moyenne</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Liste des tâches -->
+            <section class="taches-section">
+                <h2>📝 Liste des tâches</h2>
+                <div id="liste-taches" class="taches-list">
+                    <p class="empty-message">Aucune tâche pour le moment. Ajoutez-en une !</p>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>Projet pédagogique JavaScript - Toutes les fonctionnalités sont implémentées avec des fonctions !</p>
+        </footer>
+    </div>
+
+    <script src="gestionnaire-taches.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Pédagogique - Les Fonctions JavaScript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .exercices-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .exercice-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .exercice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+
+        .exercice-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .exercice-card p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        .exercice-card .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+
+        .info-box {
+            background: #e7f3ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .info-box h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .info-box code {
+            background: #f1f3f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #6c757d;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .command-box {
+            background: #1e1e1e;
+            color: #4ec9b0;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Projet Pédagogique</h1>
+            <p>Maîtriser les Fonctions JavaScript</p>
+        </header>
+
+        <div class="content">
+            <div class="info-box">
+                <h4>💡 Comment utiliser ce projet</h4>
+                <p>
+                    Ce projet est conçu pour apprendre les fonctions JavaScript de manière progressive.
+                    <strong>Chaque exercice contient des TODO détaillés</strong> à compléter.
+                    Ouvrez les fichiers dans <code>exercices/</code> et suivez les instructions.
+                </p>
+            </div>
+
+            <h2>📝 Liste des exercices</h2>
+            <div class="exercices-list">
+                <div class="exercice-card" onclick="afficherInfos(1)">
+                    <h3>Exercice 1 : Les Bases</h3>
+                    <p>Déclaration, paramètres, valeurs de retour</p>
+                    <span class="badge">Débutant</span>
+                    <div class="command-box" style="margin-top: 10px; display: none;" id="cmd1">
+                        node exercices/exercice-01-bases.js
+                    </div>
+                </div>
+
+                <div class="exercice-card" onclick="afficherInfos(2)">
+                    <h3>Exercice 2 : Variantes</h3>
+                    <p>Expressions, fléchées, IIFE, méthodes</p>
+                    <span class="badge">Débutant</span>
+                    <div class="command-box" style="margin-top: 10px; display: none;" id="cmd2">
+                        node exercices/exercice-02-variantes.js
+                    </div>
+                </div>
+
+                <div class="exercice-card" onclick="afficherInfos(3)">
+                    <h3>Exercice 3 : Avancé</h3>
+                    <p>Paramètres par défaut, rest, spread, closures</p>
+                    <span class="badge">Intermédiaire</span>
+                    <div class="command-box" style="margin-top: 10px; display: none;" id="cmd3">
+                        node exercices/exercice-03-avancees.js
+                    </div>
+                </div>
+
+                <div class="exercice-card" onclick="afficherInfos(4)">
+                    <h3>Exercice 4 : Ordre Supérieur</h3>
+                    <p>Callbacks, map, filter, reduce</p>
+                    <span class="badge">Intermédiaire</span>
+                    <div class="command-box" style="margin-top: 10px; display: none;" id="cmd4">
+                        node exercices/exercice-04-ordre-superieur.js
+                    </div>
+                </div>
+
+                <div class="exercice-card" onclick="afficherInfos(5)">
+                    <h3>Exercice 5 : Récursivité</h3>
+                    <p>Factorielle, Fibonacci, parcours</p>
+                    <span class="badge">Avancé</span>
+                    <div class="command-box" style="margin-top: 10px; display: none;" id="cmd5">
+                        node exercices/exercice-05-recursivite.js
+                    </div>
+                </div>
+
+                <div class="exercice-card" onclick="afficherInfos(6)">
+                    <h3>Exercice 6 : Projet Final</h3>
+                    <p>Gestionnaire de tâches complet</p>
+                    <span class="badge">Avancé</span>
+                    <div class="command-box" style="margin-top: 10px; display: none;" id="cmd6">
+                        node exercices/exercice-06-projet-final.js
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>📌 Instructions importantes</h4>
+                <ol>
+                    <li>Ouvrez le fichier d'exercice correspondant dans votre éditeur de code</li>
+                    <li>Complétez les TODO dans le fichier</li>
+                    <li>Exécutez le fichier avec Node.js : <code>node exercices/exercice-01-bases.js</code></li>
+                    <li>Comparez avec la solution si vous êtes bloqué</li>
+                    <li>Consultez <code>aide-memoire.md</code> pour réviser les concepts</li>
+                </ol>
+            </div>
+
+            <div class="info-box">
+                <h4>🎯 Progression recommandée</h4>
+                <ul>
+                    <li><strong>Semaine 1</strong> : Exercices 1-2 (Les bases)</li>
+                    <li><strong>Semaine 2</strong> : Exercices 3-4 (Intermédiaire)</li>
+                    <li><strong>Semaine 3</strong> : Exercices 5-6 (Avancé + Projet final)</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>Projet pédagogique pour apprendre les fonctions JavaScript | Bon apprentissage ! 🚀</p>
+        </footer>
+    </div>
+
+    <script>
+        function afficherInfos(num) {
+            // Masquer toutes les commandes
+            for (let i = 1; i <= 6; i++) {
+                const cmd = document.getElementById('cmd' + i);
+                if (cmd) cmd.style.display = 'none';
+            }
+            
+            // Afficher la commande correspondante
+            const cmd = document.getElementById('cmd' + num);
+            if (cmd) {
+                cmd.style.display = 'block';
+            }
+        }
+
+        // Afficher info au clic sur les cartes
+        document.querySelectorAll('.exercice-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (e.target.classList.contains('badge') || e.target.tagName === 'H3' || e.target.tagName === 'P') {
+                    return;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+

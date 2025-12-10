@@ -1,0 +1,27 @@
+{
+  "name": "projet-function-pedagogique",
+  "version": "1.0.0",
+  "description": "Projet pédagogique pour apprendre les fonctions JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "exo1": "node exercices/exercice-01-bases.js",
+    "exo2": "node exercices/exercice-02-variantes.js",
+    "exo3": "node exercices/exercice-03-avancees.js",
+    "exo4": "node exercices/exercice-04-ordre-superieur.js",
+    "exo5": "node exercices/exercice-05-recursivite.js",
+    "exo6": "node exercices/exercice-06-projet-final.js",
+    "sol1": "node solutions/exercice-01-solution.js",
+    "dev": "nodemon exercices/exercice-02-variantes.js"
+
+  },
+  "keywords": [
+    "javascript",
+    "fonctions",
+    "pedagogique",
+    "apprentissage"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
+
